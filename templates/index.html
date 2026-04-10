@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <h1> PROFOUND International School </h1>
+    <img src="templates/images/logo.jpg" style="border: yellowgreen;" height="150" width="100" alt="School Logo">
+    <title>School Result System</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #98FF98, #355E3B);
+            color: #333;
+        }
+
+        .container {
+            width: 40%;
+            margin: 50px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            animation: fadeIn 2s ease-in-out;
+            border-width: thick;
+        }
+        h1 {
+            text-align: center;
+            color: #355E3B;
+            column-gap: 0ch;
+        }
+
+        h2 {
+            text-align: center;
+            color: #355E3B;
+        }
+
+        input {
+            width: 50%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 2px solid #98FF98;
+            border-radius: 8px;
+            outline-width: 4px;
+            outline-color: brown;
+            cursor: auto;
+        }
+
+        input:focus {
+            border-color: #355E3B;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #355E3B;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #2e4d2f;
+            transform: scale(1.05);
+        }
+
+        .error {
+            color: red;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0; transform: translateY(20px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+
+    </style>
+
+
+    <title>School Result System</title>
+</head>
+<body>
+
+     <div class="container">
+        <h2>🎓 Student Result Portal</h2>
+
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+
+    <form action="/result" method="POST">
+        Name: <input type="text" name="name" placeholder="Student Name"><br><br>
+        Level: <input type="text" level="level" placeholder="Enter student class level"><br><br>
+
+        Math: <input type="number" name="math" placeholder="Input Math Score"><br><br>
+        English: <input type="number" name="english" placeholder="Input English Score"><br><br>
+        Science: <input type="number" name="science" placeholder="Input Science Score"><br><br>
+        Social Studies: <input type="number" name="social" placeholder="Input Social Score"><br><br>
+        Civic: <input type="number" name="civic" placeholder="Input Civic Score"><br><br>
+        Business: <input type="number" name="business" placeholder="Input Business Score"><br><br>
+        Computer: <input type="number" name="computer" placeholder="Input Computer Score"><br><br>
+        C R S: <input type="number" name="crs" placeholder="Input CRS Score"><br><br>
+        Economics: <input type="number" name="economics" placeholder="Input Economics Score"><br><br>
+        Agric: <input type="number" name="agric" placeholder="Input Agric Score"><br><br>
+        CCA: <input type="number" name="cca" placeholder="Input CCA Score"><br><br>
+
+        <button type="submit">✨ Generate Result</button>
+    </form>
+
+</body>
+
+</html>
